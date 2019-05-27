@@ -5,15 +5,72 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
-
+        android:padding="@dimen/dp_8"
+        tools:context=".ui.main.MainActivity">
     <TextView
+            android:id="@+id/textAppName"
+            android:text="@string/app_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:id="@+id/textDepartureStationLabel"
+            android:text="@string/label_departure_station"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            app:layout_constraintTop_toBottomOf="@id/textAppName"
+            app:layout_constraintStart_toStartOf="@id/spinnerDepartureStations"/>
+    <Spinner
+            android:id="@+id/spinnerDepartureStations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintTop_toBottomOf="@id/textDepartureStationLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/spinnerArrivalStations"/>
 
+    <TextView
+            android:id="@+id/textArrivalStationLabel"
+            android:text="@string/label_arrival_station"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/textDepartureStationLabel"
+            app:layout_constraintStart_toStartOf="@id/spinnerArrivalStations"/>
+    <Spinner
+            android:id="@+id/spinnerArrivalStations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textArrivalStationLabel"
+            app:layout_constraintStart_toEndOf="@id/spinnerDepartureStations"
+            app:layout_constraintEnd_toStartOf="@id/textDepartureDay"/>
+    <TextView
+            android:id="@+id/textDepartureDayLabel"
+            android:text="@string/label_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/textArrivalStationLabel"
+            app:layout_constraintStart_toStartOf="@id/textDepartureDay"/>
+    <TextView
+            android:id="@+id/textDepartureDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/color_primary_dark"
+            style="@style/Widget.AppCompat.Spinner"
+            app:layout_constraintTop_toTopOf="@id/spinnerArrivalStations"
+            app:layout_constraintBottom_toBottomOf="@id/spinnerArrivalStations"
+            app:layout_constraintStart_toEndOf="@id/spinnerArrivalStations"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <ListView
+            android:id="@+id/listTrains"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/spinnerDepartureStations"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
