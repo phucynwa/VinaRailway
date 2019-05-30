@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">VinaRailway</string>
+    <string name="label_train_default">LP1</string>
+    <string name="label_duration_default">(20 minutes)</string>
+    <string name="label_departure_station">Departure</string>
+    <string name="label_arrow">→</string>
+    <string name="label_arrival_station">Arrival</string>
+    <string name="label_train_time_default">(00:00)</string>
+    <string name="label_day">Day</string>
+    <string name="text_error_notice">There are some error for this request...</string>
+    <string name="text_empty_response_notice">There aren\'t any train on this day !</string>
 </resources>
